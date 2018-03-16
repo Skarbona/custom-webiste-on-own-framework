@@ -22,6 +22,7 @@ class Database {
     {
         //set DSN
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+
         $options = array( //set PDO options
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE    => PDO::ERRMODE_EXCEPTION
@@ -31,6 +32,7 @@ class Database {
         try{
 
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+
 
         } catch(PDOException $e) {
             $this->error = $e->getMessage();

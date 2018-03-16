@@ -10,12 +10,20 @@ class Pages extends Controller {
 
     public function index(){
 
+        if(isLoggedIn()) {
+
+            redirect('posts');
+
+        }
+
         $data = array(
             'title' => 'PHP Website on own PHP Framework',
             'small-title' => 'Used Technologies&Tools',
             'description' =>'PHP, Own MVC PHP Framework, JS, HTML5, CSS3, Bootstrap4'
 
         );
+
+
 
         $this->view('pages/index', $data);
 
